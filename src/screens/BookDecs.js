@@ -1,6 +1,6 @@
-import React from "react-native";
-import {View, Text, Image, ImageBackground, TouchableOpacity,ScrollView} from 'react-native';
-
+import React from "react";
+import {View, Text, Image, ImageBackground, TouchableOpacity} from 'react-native';
+import { ScrollView } from "react-native-virtualized-view";
 import {icons, COLORS, images, SIZES, FONTS} from '../../constants';
 
 const LineDivider = () => {
@@ -11,7 +11,7 @@ const LineDivider = () => {
   )
 }
 
-const Bookdes = ({route, navigation}) => {
+const BookDecs = ({route, navigation}) => {
 
   const {detailsData} = route.params;
 
@@ -75,20 +75,20 @@ const Bookdes = ({route, navigation}) => {
         </View>
 
         {/* book cover section */}
-        <View style={{alignItems: 'center', paddingTop: 79}}>
+        <View style={{alignItems: 'center', paddingTop: 40}}>
           <Image 
           source={detailsData.bookCover}
-          resizeMode = {"cover"}
+          resizeMode = {"contain"}
           style={{
             borderRadius: 10,
-            height: 250,
-            width: 180
+            height: 180,
+            width: 150
           }}
           />
         </View>
 
         {/* Book name and author name */}
-        <View style={{alignItems: 'center', marginTop: 15}}>
+        <View style={{alignItems: 'center', marginTop: 10}}>
           <Text style={{fontSize: 18, color: detailsData.navTintColor, fontWeight: 'bold'}}>{detailsData.bookName}</Text>
           <Text style={{...FONTS.body3, color: detailsData.navTintColor}}>{detailsData.author}</Text>
         </View>
@@ -164,7 +164,7 @@ const Bookdes = ({route, navigation}) => {
           />
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => console.log("hello")} style={{height: 53, width: 300, backgroundColor: COLORS.primary, alignItems: 'center', justifyContent: 'center', borderRadius: 10, marginLeft: 13}}>
+        <TouchableOpacity onPress={() => { console.log("hello")}} style={{height: 53, width: 300, backgroundColor: COLORS.primary, alignItems: 'center', justifyContent: 'center', borderRadius: 10, marginLeft: 13}}>
           <Text style={{...FONTS.h3, color: COLORS.white}}>Start Reading</Text>
         </TouchableOpacity>
       </View>
@@ -185,11 +185,11 @@ const Bookdes = ({route, navigation}) => {
       </View>
 
       {/* function for bottom buttons */}
-      <View style={{bottom: 40}}>
+      <View style={{bottom: 15}}>
         {BottomButtons()}
       </View>
     </View>
   )
 }
 
-export default Bookdes
+export default BookDecs

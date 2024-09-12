@@ -23,12 +23,12 @@ const headerData = {
   points: 240,
 };
 
-const  HomeScreen = ({navigation}) => {
+const HomeScreen = ({navigation}) => {
 
   const bookOtherWordsForHome = {
     id: 3,
     bookName: "Other Words For Home",
-    bookCover: images.banner_5,
+    bookCover: images.other_words_for_home,
     rating: 4.5,
     language: "Eng",
     pageNo: "341",
@@ -45,7 +45,7 @@ const  HomeScreen = ({navigation}) => {
 const bookTheMetropolis = {
     id: 2,
     bookName: "The Metropolis",
-    bookCover: images.banner_2,
+    bookCover: images.the_metropolist,
     rating: 4.1,
     language: "Eng",
     pageNo: "272",
@@ -62,7 +62,7 @@ const bookTheMetropolis = {
 const bookTheTinyDragon = {
     id: 1,
     bookName: "The Tiny Dragon",
-    bookCover: images.banner_3,
+    bookCover: images.the_tiny_dragon,
     rating: 3.5,
     language: "Eng",
     pageNo: "160",
@@ -79,7 +79,7 @@ const bookTheTinyDragon = {
 const bookUnderland = {
   id: 4,
   bookName: "Underland",
-  bookCover: images.banner_4,
+  bookCover: images.underland,
   rating: 4.9,
   language: "Eng",
   pageNo: "496",
@@ -131,7 +131,7 @@ const booksCategories = [
     id: 2,
     categoryName: 'The Latest',
     books: [
-       bookTheTinyDragon, bookUnderland,bookOtherWordsForHome
+       bookTheTinyDragon, bookUnderland
     ]
   },
   {
@@ -297,7 +297,6 @@ const booksCategories = [
   function books() {
 
     const renderItem = ({item, index}) => {
-      console.log(item);
       return(
         <TouchableOpacity 
         style={{ 
@@ -309,7 +308,7 @@ const booksCategories = [
           {/* book images */}
           <Image 
           source={item.bookCover}
-          resizeMode= {"cover"}
+          resizeMode= {"contain"}
           style={{width: 180, height: 250, borderRadius: 20}}
           />
 
